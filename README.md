@@ -30,7 +30,7 @@ $ rails new \
   --skip-bundle \
   .
 
-$ npm i vue
+$ npm i vue axios vue-axios destyle.css
 $ npm i -D \
   webpack webpack-cli webpack-dev-server \
   webpack-merge clean-webpack-plugin assets-webpack-plugin \
@@ -40,7 +40,7 @@ $ npm i -D \
   babel-loader @babel/core @babel/preset-env
 
 $ rm -rf app/assets app/helpers
-$ mkdir -p app/frontend/{assets,components,styles}
+$ mkdir -p app/frontend/{assets,components,styles,plugins}
 $ mkdir public/dist
 $ mkdir app/views/pages && touch app/views/pages/empty.html
 ```

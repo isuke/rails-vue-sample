@@ -1,6 +1,6 @@
 const path = require('path')
 
-const AssetsPlugin = require("assets-webpack-plugin");
+const AssetsPlugin = require("assets-webpack-plugin")
 const { CleanWebpackPlugin } = require("clean-webpack-plugin")
 const { merge } = require("webpack-merge");
 const { VueLoaderPlugin } = require("vue-loader")

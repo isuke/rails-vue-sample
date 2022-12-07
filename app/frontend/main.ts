@@ -7,6 +7,20 @@ import 'destyle.css'
 // Scripts
 //
 import { createApp } from 'vue'
+
 import App from './App.vue'
 
-createApp(App).mount('#app')
+import axios from 'axios'
+import VueAxios from 'vue-axios'
+
+const csrfToken = document.querySelector('meta[name="csrf-token"]')?.getAttribute('content')
+const $axios = axios.create({
+  headers: {
+    Authorization: `Bearer ${csrfToken}`
+  }
+})
+
+const app = createApp(App)
+app.use(VueAxios, $axios)
+app.provide('$axios', app.config.globalProperties.axios)
+app.mount('#app')
