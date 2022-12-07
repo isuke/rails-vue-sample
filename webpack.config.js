@@ -31,8 +31,14 @@ let config = {
         test: /\.ts$/,
         use: [
           {
-            loader: "ts-loader",
-            options: { appendTsSuffixTo: [/\.vue$/] },
+            loader: "babel-loader",
+            options: {
+              presets: [
+                "@babel/preset-env",
+                "babel-preset-typescript-vue3",
+                "@babel/preset-typescript",
+              ],
+            },
           },
         ],
       },
@@ -59,6 +65,7 @@ module.exports = (env, argv) => {
         filename: "build.js",
         publicPath: "http://localhost:3001/",
       },
+      devtool: "eval",
       devServer: {
         port: "3001",
         hot: true,

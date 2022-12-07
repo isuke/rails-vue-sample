@@ -37,7 +37,8 @@ $ npm i -D \
   vue-loader vue-style-loader vue-template-compiler \
   typescript ts-loader \
   sass sass-loader css-loader style-loader \
-  babel-loader @babel/core @babel/preset-env
+  babel-loader  babel-preset-typescript-vue3 \
+  @babel/core @babel/preset-env @babel/preset-typescript
 
 $ rm -rf app/assets app/helpers
 $ mkdir -p app/frontend/{assets,components,styles,plugins}
