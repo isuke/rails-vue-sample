@@ -1,0 +1,27 @@
+# Ignore bundler config.
+/.bundle
+
+# Ignore node modules
+node_modules
+
+# Ignore the default SQLite database.
+/db/*.sqlite3
+/db/*.sqlite3-*
+
+# Ignore all logfiles and tempfiles.
+/log/*
+/tmp/*
+!/log/.keep
+!/tmp/.keep
+
+# Ignore pidfiles, but keep the directory.
+/tmp/pids/*
+!/tmp/pids/
+!/tmp/pids/.keep
+
+# Ignore frontend files
+/public/dist
+webpack-assets.json
+
+# Ignore master key for decrypting credentials and more.
+/config/master.key

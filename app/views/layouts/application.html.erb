@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>RailsVueSample</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+  </head>
+
+  <body>
+    <div id="app" data-name="<%= action_name.camelize(:upper) %>">
+
+    <script src="<%= @script_path %>"></script>
+  </body>
+</html>
