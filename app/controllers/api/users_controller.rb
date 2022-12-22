@@ -7,4 +7,8 @@ class Api::UsersController < ApplicationController
       { first_name: 'Hadriana', family_name: 'Daniele' },
     ]
   end
+
+  def create
+    puts "hello #{params[:first_name]} #{params[:family_name]}"
+  end
 end

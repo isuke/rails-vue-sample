@@ -9,6 +9,15 @@ type User = {
 const $axios: any = inject('$axios')
 
 const users = ref<User[]>([])
+const newFirstName = ref<string>('')
+const newFamilyName = ref<string>('')
+
+const postUser = async (): Promise<void> => {
+  await $axios.post('/api/users', {
+    firstName: newFirstName.value,
+    familyName: newFamilyName.value
+  })
+}
 
 $axios.get('/api/users')
   .then((response: { data: User[] }) => {
@@ -25,6 +34,13 @@ $axios.get('/api/users')
         {{ user.firstName }} {{ user.familyName }}
       </li>
     </ul>
+
+    <form class="form">
+      <label class="label">First Name<input type="text" class="input" v-model="newFirstName"/></label>
+      <label class="label">Family Name<input type="text" class="input" v-model="newFamilyName"/></label>
+      <input type="submit" value="Submit" class="submit" @click.prevent="postUser"/>
+    </form>
+
   </div>
 </template>
 
@@ -45,8 +61,30 @@ $axios.get('/api/users')
     font-weight: bold;
   }
 
-  > .list {
+  >.list {
     margin-top: 1rem;
+  }
+
+  > .form {
+    margin-top: 1rem;
+
+    > .label {
+      &:not(:first-child) { margin-left: 1rem; }
+
+      > .input {
+        background-color: white;
+        border-radius: 0.5rem;
+        margin-left: 0.5rem;
+        padding: 0.25rem 0.5rem;
+      }
+    }
+
+    > .submit {
+      background-color: #fc8585;
+      border-radius: 0.5rem;
+      margin-left: 0.5rem;
+      padding: 0.25rem 0.5rem;
+    }
   }
 }
 </style>

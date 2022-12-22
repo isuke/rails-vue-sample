@@ -16,7 +16,7 @@ import VueAxios from 'vue-axios'
 const csrfToken = document.querySelector('meta[name="csrf-token"]')?.getAttribute('content')
 const $axios = axios.create({
   headers: {
-    Authorization: `Bearer ${csrfToken}`
+    'X-CSRF-Token': csrfToken
   }
 })
 
