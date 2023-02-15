@@ -21,7 +21,6 @@ node_modules
 
 # Ignore frontend files
 /public/dist
-webpack-assets.json
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key

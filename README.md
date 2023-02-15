@@ -2,7 +2,7 @@
 
 - Rails 7
 - Vue 3
-- webpack 5
+- Vite 4
 - TypeScript
 - System spec with capybara
 
@@ -32,12 +32,10 @@ $ rails new \
 
 $ npm i vue axios vue-axios destyle.css
 $ npm i -D \
-  webpack webpack-cli webpack-dev-server \
-  webpack-merge clean-webpack-plugin assets-webpack-plugin @types/webpack-env \
-  vue-loader vue-style-loader vue-template-compiler \
-  typescript ts-loader \
-  sass sass-loader css-loader style-loader \
-  babel-loader babel-preset-typescript-vue3 \
+  @vitejs/plugin-vue vite vue-tsc \
+  typescript \
+  sass \
+  babel-preset-typescript-vue3 \
   @babel/core @babel/preset-env @babel/preset-typescript
 
 $ rm -rf app/assets app/helpers

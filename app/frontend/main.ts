@@ -1,3 +1,5 @@
+import 'vite/modulepreload-polyfill'
+
 //
 // Styles
 //

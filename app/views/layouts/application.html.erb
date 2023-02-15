@@ -3,13 +3,18 @@
   <head>
     <title>RailsVueSample</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
+    <% if @is_running_vite_dev_server %>
+      <script type="module" src="http://localhost:5173/@vite/client"></script>
+      <script type="module" src="http://localhost:5173/app/frontend/main.ts"></script>
+    <% else %>
+      <link rel="stylesheet" href="<%= @style_path %>">
+      <script type="module" src="<%= @script_path %>"></script>
+    <% end %>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
   </head>
 
   <body>
     <div id="app" data-name="<%= action_name.camelize(:upper) %>"></div>
-
-    <script src="<%= @script_path %>"></script>
   </body>
 </html>
